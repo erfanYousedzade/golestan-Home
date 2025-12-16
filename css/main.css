@@ -550,7 +550,7 @@ body {
     background-image: url("../imges/back.png");
     color: #fff;
     font-size: 16px;
-    height: 419px;
+    height: 439px;
   }
   .box4 .fot {
     display: flex;
@@ -559,7 +559,7 @@ body {
   }
   .box4 .fot .fb-1 {
     padding-right: 40px;
-    width: 194px;
+    width: 184px;
   }
   .box4 .fot .fb-1 .img05 {
     padding-bottom: 20px;
@@ -574,6 +574,7 @@ body {
     color: #bcbec0;
     margin-bottom: -3px;
     transition: all 500ms 0s;
+    font-size: 14px;
     cursor: pointer;
   }
   .box4 .fot .fb-1 .p2:hover {
@@ -833,6 +834,7 @@ body {
 }
 .fix2 .fix22 {
   font-size: 20px;
+  color: #fff;
 }
 
 /* ================== FIX HORIZONTAL SCROLL (SAFE PATCH) ================== */
