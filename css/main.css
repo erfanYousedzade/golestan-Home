@@ -1,0 +1,882 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Roboto";
+  src: url("../index.html");
+  src: url("../index.html") format("embedded-opentype"), url("Roboto-Regular.woff2") format("woff2"), url("Roboto-Regular.woff") format("woff"), url("Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.fix {
+  position: relative;
+  z-index: 2000 !important;
+}
+
+.img01 {
+  position: fixed !important;
+  z-index: 9999;
+}
+
+/* ================= NAVBAR MAIN ================ */
+@media all and (max-width: 767px) {
+  .navbar ul .products,
+  .navbar ul .aboutus {
+    display: none !important;
+  }
+}
+.navbar {
+  color: #afb2b4;
+  background-color: rgb(37, 37, 37);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+.navbar i {
+  font-size: 30px;
+  font-weight: bold;
+  padding-right: 30px;
+  margin-top: 150px;
+}
+
+/* حذف نقطه‌های li */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ================= IMAGE (img01) — FIXED & VISIBLE ================ */
+/* مهم: z-index تصویر بالاتر از navbar تا همیشه قابل مشاهده باشد */
+.img01 {
+  position: fixed !important; /* همیشه فیکس بمونه */
+  width: 180px;
+  display: block;
+  height: auto;
+  pointer-events: auto; /* اگر لازم باشه قابل کلیک باشه */
+  /* مقدار اولیه که در حالت موبایل درست باشه */
+  top: 5px;
+  left: 50%;
+}
+
+/* اگر خواستی قاب نگه‌دارنده هم تداخل نکند */
+.fix {
+  position: relative;
+}
+
+/* ================= IMAGE POSITION —RESPONSIVE ADJUSTMENTS=============== */
+@media all and (min-width: 300px) and (max-width: 767px) {
+  .navbar {
+    height: 220px;
+    background-image: url("../imges/back.png");
+  }
+}
+@media all and (min-width: 300px) and (max-width: 991px) {
+  .img01 {
+    /* موبایل و تبلت کوچک: بالای صفحه و وسط */
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+  }
+}
+@media all and (min-width: 991px) {
+  .img01 {
+    /* دسکتاپ: کمی به سمت چپ و پایینتر (زیر هدر) */
+    top: 30px;
+    left: 15%;
+    width: 180px;
+  }
+}
+/* ================= NAVBAR DESKTOP (≥991px) ================ */
+@media all and (min-width: 991px) {
+  .navbar {
+    height: 90px;
+    background-image: url("../imges/back.png");
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    left: 42%;
+    top: 45px;
+  }
+  .navbar ul li {
+    font-size: 17px;
+    width: 110px;
+    position: relative;
+    transition: all 800ms 0s;
+    text-align: center;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #afb2b4;
+    background-color: rgb(37, 37, 37);
+    transition: all 700ms 0s;
+    cursor: pointer;
+  }
+  .navbar ul li:hover a {
+    color: #ffffff !important;
+  }
+  .lip1 {
+    border-right: 1px solid gray;
+  }
+  .lii {
+    padding-left: 30px;
+  }
+  .komaki0 {
+    padding-left: 10px;
+  }
+}
+/* ================= NAVBAR TABLET (768–990px) ================ */
+@media all and (min-width: 768px) and (max-width: 990px) {
+  .navbar {
+    height: 220px;
+    background-image: url("../imges/back.png");
+  }
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    padding-left: 190px;
+    top: 170px;
+  }
+  .navbar ul li {
+    display: flex;
+    font-size: 17px;
+    width: 105px;
+  }
+  .navbar ul li a {
+    color: #afb2b4;
+    background-color: rgb(37, 37, 37);
+    text-decoration: none;
+  }
+  .navbar ul li:hover a {
+    color: #ffffff;
+  }
+}
+/* ================= DROPDOWN STYLE (PRODUCTS + ABOUT US) ================ */
+/* حالت پنهان */
+.navbar ul li .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-image: url("../imges/back.png");
+  color: #afb2b4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 190px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* وقتی هاور می‌شود */
+.navbar ul li:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* آیتم‌های داخل dropdown */
+.navbar ul li .dropdown p {
+  margin: 0;
+  padding: 6px 0;
+  cursor: pointer;
+}
+.navbar ul li .dropdown p:hover {
+  color: #fff;
+}
+
+.p1 {
+  color: #94979a;
+  background-color: white;
+  font-size: 17px;
+}
+
+@media all and (min-width: 768px) {
+  .img03 {
+    width: 300px;
+    padding-top: 130px;
+    margin-left: 60px;
+  }
+  .b3 {
+    display: flex;
+    justify-content: center;
+  }
+  .row1 {
+    display: flex;
+    justify-content: center;
+  }
+  .b31-2 {
+    position: relative;
+    left: 15%;
+    margin-top: 160px;
+  }
+  .b31-2 h5 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 30px;
+    color: red;
+  }
+  .b31-2 p {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    font-size: 20px;
+    color: #898989;
+    font-family: sans-serif;
+  }
+  .b31-2 .p-komaki {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -13px;
+  }
+  .box2 {
+    height: 535px;
+  }
+  .box2 .but1 {
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: all 600ms 0s;
+    width: 120px;
+    padding: 5px;
+    text-align: center;
+    color: #7c7d7e;
+    background-color: white;
+  }
+  .box2 .but1:hover {
+    color: white;
+    background-color: red;
+  }
+  .box2 {
+    background-image: linear-gradient(rgb(251, 251, 251) 0%, rgb(210, 210, 210) 100%);
+  }
+}
+@media all and (min-width: 768px) and (min-width: 300px) and (max-width: 767px) {
+  .box2 {
+    width: 100%;
+    margin-top: 190px;
+    background-image: linear-gradient(rgb(251, 251, 251) 0%, rgb(210, 210, 210) 100%);
+  }
+  .row1 {
+    margin-left: auto;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+  }
+  .row1 .img03 {
+    width: 250px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .row1 .b31-2 {
+    padding-top: 20px;
+    padding-left: 4px;
+  }
+  .row1 .b31-2 h5 {
+    color: red;
+    font-size: 25px;
+    font-family: sans-serif;
+  }
+  .row1 .b31-2 p {
+    font-size: 20px;
+    font-family: "Roboto";
+    color: #b3b3b4;
+  }
+}
+@media all and (min-width: 768px) and (min-width: 300px) and (max-width: 500px) {
+  .box4 {
+    width: 100%;
+    background-image: url("../imges/back.png");
+    color: #fff;
+    font-size: 15px;
+    height: 1219px;
+  }
+  .box4 .fot {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .box4 .fot .fb-1 {
+    padding-right: 40px;
+    margin: 3px auto;
+    width: 300px;
+    text-align: center;
+  }
+  .box4 .fot .fb-1 .img05 {
+    padding-bottom: 20px;
+  }
+  .box4 .fot .fb-1 h6 {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .box4 .fot .fb-1 p {
+    color: #bcbec0;
+    margin-bottom: -3px;
+  }
+  .box4 .fot .fb-1 .p2:hover {
+    color: #fff;
+  }
+  .box9 {
+    width: 300px;
+    margin: 60px auto;
+  }
+  .box9 p {
+    font-size: 19px;
+    color: #aeb3b7;
+  }
+  .box9 .h61 {
+    font-size: 22px;
+    color: red;
+  }
+}
+@media all and (min-width: 768px) and (min-width: 501px) and (max-width: 767px) {
+  .box4 {
+    width: 100%;
+    background-image: url("../imges/back.png");
+    color: #fff;
+    font-size: 15px;
+    height: 1219px;
+  }
+  .box4 .fot {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .box4 .fot .fb-1 {
+    padding-right: 35px;
+    margin: 3px auto;
+    width: 390px;
+    text-align: center;
+  }
+  .box4 .fot .fb-1 .img05 {
+    padding-bottom: 20px;
+  }
+  .box4 .fot .fb-1 h6 {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .box4 .fot .fb-1 p {
+    color: #bcbec0;
+    margin-bottom: -3px;
+    transition: all 600ms 0s;
+  }
+  .box4 .fot .fb-1 .p2:hover {
+    color: #fff;
+  }
+  .box9 {
+    width: 500px;
+    margin: 50px auto;
+  }
+  .box9 p {
+    font-size: 19px;
+    color: #aeb3b7;
+  }
+  .box9 .h61 {
+    font-size: 22px;
+    color: red;
+  }
+}
+.box5 {
+  height: 95px;
+  display: flex;
+  margin-bottom: -10px;
+  font-size: 38px;
+  margin-top: 90px;
+  padding-top: 25px;
+}
+.box5 .icon1 {
+  margin-right: 10px;
+  transition: all 600ms 0s;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.box5 {
+  justify-content: center;
+}
+.box5 .i1:hover {
+  color: rgb(128, 128, 218);
+}
+.box5 .i2:hover {
+  color: rgb(167, 167, 244);
+}
+.box5 .i3:hover {
+  color: rgb(216, 23, 10);
+}
+.box5 .i4:hover {
+  color: rgb(42, 156, 194);
+}
+.box5 .i5:hover {
+  color: rgb(177, 25, 86);
+}
+.box5 .i6:hover {
+  color: rgb(22, 128, 55);
+}
+.box5 {
+  color: rgb(185, 184, 184);
+  background-color: #edeaea;
+}
+
+.box6 {
+  background-color: red;
+  height: 25px;
+  margin-bottom: -10px;
+}
+
+.fot2 {
+  text-align: center;
+  margin-top: 70px;
+  color: #bcbec0;
+}
+.fot2 p {
+  color: gray;
+  font-size: 12px;
+  margin-top: -3px;
+}
+.fot2 h6 {
+  font-size: 15px;
+  color: #9f9f9f;
+}
+
+@media all and (min-width: 300px) and (max-width: 767px) {
+  .job3 {
+    width: 100px;
+  }
+  .box {
+    margin-top: 60px;
+  }
+  .job {
+    margin: 20px auto;
+    width: 300px;
+  }
+  .img02 {
+    width: 200px;
+    margin: 5px auto;
+  }
+  .job2 {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+  }
+  .box4 {
+    width: 100%;
+    background-image: url("../imges/back.png");
+    color: #fff;
+    font-size: 15px;
+    height: 1300px;
+  }
+  .box4 .fot {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .box4 .fot .fb-1 {
+    padding-right: 40px;
+    margin: 3px auto;
+    width: 390px;
+    text-align: center;
+  }
+  .box4 .fot .fb-1 .img05 {
+    padding-bottom: 20px;
+  }
+  .box4 .fot .fb-1 h6 {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .box4 .fot .fb-1 p {
+    color: #bcbec0;
+    margin-bottom: -3px;
+  }
+  .box2 {
+    width: 100%;
+    margin-top: 190px;
+    background-image: linear-gradient(rgb(251, 251, 251) 0%, rgb(210, 210, 210) 100%);
+  }
+  .but1 {
+    border: 1px solid white;
+    border-radius: 3px;
+    color: #7c7d7e;
+    background-color: white;
+  }
+  .row1 {
+    margin-left: auto;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+  }
+  .row1 .img03 {
+    width: 250px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .row1 .b31-2 {
+    padding-top: 10px;
+    padding-left: 4px;
+  }
+  .row1 .b31-2 h5 {
+    color: red;
+    font-size: 25px;
+    font-family: "IRANSansLight";
+  }
+  .row1 .b31-2 p {
+    font-size: 20px;
+    font-family: "Roboto";
+    color: #898989;
+    width: 300px;
+  }
+}
+@media all and (min-width: 768px) {
+  .box4 {
+    width: 100%;
+    background-image: url("../imges/back.png");
+    color: #fff;
+    font-size: 16px;
+    height: 419px;
+  }
+  .box4 .fot {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .box4 .fot .fb-1 {
+    padding-right: 40px;
+    width: 194px;
+  }
+  .box4 .fot .fb-1 .img05 {
+    padding-bottom: 20px;
+  }
+  .box4 .fot .fb-1 h6 {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .box4 .fot .fb-1 p {
+    color: #bcbec0;
+    margin-bottom: -3px;
+    transition: all 500ms 0s;
+    cursor: pointer;
+  }
+  .box4 .fot .fb-1 .p2:hover {
+    color: #fff;
+  }
+  .box9 {
+    width: 680px;
+    margin: 80px auto;
+  }
+  .box9 p {
+    font-size: 19px;
+    color: #aeb3b7;
+  }
+  .box9 .h61 {
+    font-size: 22px;
+    color: red;
+  }
+}
+@media all and (min-width: 767px) and (max-width: 991px) {
+  .b3 {
+    display: flex;
+    justify-content: center;
+  }
+  .row1 {
+    display: flex;
+  }
+  .b31-2 {
+    margin-top: 150px;
+  }
+  .box2 {
+    height: 455px;
+    margin-top: 90px;
+    width: 100%;
+    background-image: linear-gradient(rgb(251, 251, 251) 0%, rgb(210, 210, 210) 100%);
+  }
+}
+@media all and (min-width: 300px) and (max-width: 500px) {
+  .intro {
+    width: 280px;
+    margin: 90px auto;
+  }
+  .intro p {
+    color: #949393;
+    background-color: white;
+    margin-top: 30px;
+  }
+  .intro h5 {
+    color: red;
+    background-color: white;
+    font-size: 22px;
+  }
+}
+@media all and (min-width: 501px) and (max-width: 766px) {
+  .intro {
+    width: 480px;
+    margin: 90px auto;
+  }
+  .intro p {
+    color: #949393;
+    background-color: white;
+    margin-top: 30px;
+  }
+  .intro h5 {
+    color: red;
+    background-color: white;
+    font-size: 22px;
+  }
+}
+@media all and (min-width: 300px) and (max-width: 767px) {
+  .pic {
+    display: none;
+  }
+  .rice2 {
+    height: 45px;
+    font-size: 28px;
+    text-align: end;
+    color: white;
+    background-color: red;
+  }
+  .img14 {
+    width: 300px;
+  }
+}
+@media all and (min-width: 768px) {
+  .intro {
+    width: 600px;
+    margin: 90px auto;
+  }
+  .intro p {
+    color: #a2a1a1;
+    background-color: white;
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  .intro h5 {
+    color: red;
+    background-color: white;
+    font-size: 22px;
+  }
+  .pic {
+    display: flex;
+    justify-content: center;
+  }
+  .pic p {
+    text-align: center;
+    margin-top: 5px;
+    padding-right: 10px;
+    color: #7c7d7e;
+    background-color: white;
+    border-bottom: 1px solid #9b9c9d;
+    margin-right: 10px;
+  }
+  .pic .img11 {
+    margin-right: 10px;
+  }
+  .img12 {
+    height: 500px;
+    z-index: 3;
+    position: relative;
+  }
+  .rang {
+    width: 100%;
+    height: 30px;
+    color: white;
+    background-color: #e9d69f;
+  }
+  .rice {
+    width: 260px;
+    height: 104px;
+    font-size: 37px;
+    padding-top: 17px;
+    left: 10%;
+    margin-top: -60px;
+    margin-bottom: 60px;
+    z-index: 200;
+    position: absolute;
+    color: white;
+    background-color: red;
+  }
+}
+.khat {
+  width: 100%;
+  height: 1px;
+  color: #7a7a7a;
+  background-color: #c8c4c4;
+  margin-top: 30px;
+}
+
+.khat2 {
+  width: 100%;
+  height: 1px;
+  color: #7a7a7a;
+  background-color: #c8c4c4;
+  margin-top: 110px;
+}
+
+.but2 {
+  border: 1px solid rgb(155, 154, 154);
+  border-radius: 8px;
+  transition: all 600ms 0s;
+  width: 120px;
+  padding: 7px;
+  text-align: center;
+  color: #7c7d7e;
+  background-color: white;
+}
+
+.but2:hover {
+  color: white;
+  background-color: red;
+}
+
+.last {
+  width: 100%;
+  height: 600px;
+  z-index: 4;
+  position: relative;
+  background-color: rgba(3, 61, 45, 0.74);
+}
+
+.rang2 {
+  width: 100%;
+  height: 20px;
+  z-index: 3;
+  position: relative;
+  color: white;
+  background-color: #e9d69f;
+}
+
+.khat3 {
+  width: 100%;
+  height: 10px;
+  color: white;
+  background-color: black;
+}
+
+.text-last {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  position: relative;
+}
+.text-last h6 {
+  font-size: 30px;
+  color: #009da2;
+}
+.text-last p {
+  font-size: 20px;
+  color: #00d8df;
+  margin-top: 6px;
+  margin-left: 3px;
+}
+.text-last .img14 {
+  position: absolute;
+  top: 100px;
+  width: 350px;
+  z-index: 10;
+}
+
+.rang4 {
+  background-color: #009da2;
+  width: 100%;
+  height: 0.5px;
+}
+
+.khat5 {
+  background-color: #cdcbcb;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 10px;
+}
+
+.khat6 {
+  background-color: #cdcbcb;
+  width: 100%;
+  height: 2px;
+  margin-top: 50px;
+}
+
+.a1 {
+  color: white;
+}
+
+.know {
+  margin-top: 30px;
+}
+
+.fix2 {
+  bottom: 4%;
+  right: 4%;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: #7a7a7a;
+  text-align: center;
+  color: black;
+}
+.fix2 .fix22 {
+  font-size: 20px;
+}
+
+/* ================== FIX HORIZONTAL SCROLL (SAFE PATCH) ================== */
+/* جلوگیری از اسکرول عرضی در کل صفحه */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* همه المنت‌ها اجازه خروج از viewport ندارند */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* مخصوص المنت‌های fixed (علت اصلی اسکرول) */
+.navbar,
+.navbar ul,
+.img01 {
+  max-width: 100vw;
+}
+
+/* جلوگیری از overflow ناشی از left درصدی */
+@media all and (max-width: 991px) {
+  .navbar ul {
+    right: 0;
+    left: auto;
+  }
+}
+/* تصاویر */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* بک‌گراندها امن */
+.navbar,
+.box2,
+.box4 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=main.css.map */
