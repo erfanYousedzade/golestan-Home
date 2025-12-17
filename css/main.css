@@ -108,7 +108,8 @@ body {
   }
   .navbar ul li {
     font-size: 17px;
-    width: 110px;
+    width: auto;
+    min-width: 110px;
     position: relative;
     transition: all 800ms 0s;
     text-align: center;
@@ -144,7 +145,7 @@ body {
     flex-direction: row;
     justify-content: center;
     position: fixed;
-    padding-left: 190px;
+    padding-right: 80px;
     top: 170px;
   }
   .navbar ul li {
@@ -171,7 +172,7 @@ body {
   color: #afb2b4;
   padding: 10px 15px;
   border-radius: 5px;
-  width: 190px;
+  width: 250px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-12px);
@@ -835,6 +836,20 @@ body {
 .fix2 .fix22 {
   font-size: 20px;
   color: #fff;
+}
+
+.navbar ul li .dropdown {
+  width: 190px;
+  text-align: start;
+  left: -20%;
+}
+
+.navbar ul li .dropdown {
+  max-width: none !important;
+}
+
+.yadam {
+  font-family: sans-serif;
 }
 
 /* ================== FIX HORIZONTAL SCROLL (SAFE PATCH) ================== */
